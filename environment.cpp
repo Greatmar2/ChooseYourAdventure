@@ -16,5 +16,16 @@ Environment::Environment(int id, QString name, QString description, int travelSp
 }
 
 Environment::~Environment() {
-
+    delete &id;
+    delete &name;
+    delete &description;
+    delete &travelSpeed;
+    delete items;
+    delete itemProbs;
+    delete &numItems;
+    delete events;
+    delete eventProbs;
+    delete &numEvents;
+    delete restrictions;
+    delete &numRestrictions;
 }
