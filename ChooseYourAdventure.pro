@@ -19,7 +19,8 @@ SOURCES +=\
     area.cpp \
     event.cpp \
     item.cpp \
-    npc.cpp
+    npc.cpp \
+    race.cpp
 
 HEADERS  += mainwindow.h \
     content.h
