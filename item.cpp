@@ -12,6 +12,11 @@ Item::Item(int *id, QString *name, QString *description, int* mass, QString *act
     this->numResults = numResults;
 }
 
+Item::Item()
+{
+
+}
+
 Item::~Item() {
     delete id;
     delete name;

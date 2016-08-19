@@ -14,6 +14,11 @@ Environment::Environment(int *id, QString *name, QString *description, int *trav
     this->numRestrictions = numRestrictions;
 }
 
+Environment::Environment()
+{
+
+}
+
 Environment::~Environment() {
     delete id;
     delete name;

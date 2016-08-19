@@ -17,6 +17,11 @@ NPC::NPC(int *id, QString *name, QString *description, int *attitude, int *raceI
     this->numResults = numResults;
 }
 
+NPC::NPC()
+{
+
+}
+
 NPC::~NPC() {
     delete id;
     delete name;

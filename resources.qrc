@@ -5,6 +5,7 @@
         <file>content/Events.txt</file>
         <file>content/Items.txt</file>
         <file>content/NPCs.txt</file>
+        <file>content/Races.txt</file>
     </qresource>
     <qresource prefix="/content/images"/>
 </RCC>

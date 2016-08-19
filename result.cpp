@@ -1,5 +1,10 @@
 #include "content.h"
 
+Result::Result()
+{
+
+}
+
 Result::Result(QString *description, int *resultCause, int *resultProbability) {
     this->description = description;
     this->resultCause = resultCause;

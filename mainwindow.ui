@@ -193,7 +193,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QLineEdit" name="lneTextInput">
+   <widget class="QLineEdit" name="lneInput">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -220,6 +220,7 @@
     <addaction name="actionSave_and_Quit"/>
     <addaction name="actionNew_Game"/>
     <addaction name="actionLoad_Game"/>
+    <addaction name="actionShare_Game"/>
    </widget>
    <addaction name="menuChoose_Your_Adventure"/>
   </widget>
@@ -245,6 +246,11 @@
   <action name="actionLoad_Game">
    <property name="text">
     <string>Load Game</string>
+   </property>
+  </action>
+  <action name="actionShare_Game">
+   <property name="text">
+    <string>Share Game</string>
    </property>
   </action>
  </widget>

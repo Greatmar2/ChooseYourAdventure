@@ -15,6 +15,11 @@ Area::Area(int *id, QString *name, QString *description, int *environment, int *
     this->numRestrictions = numRestrictions;
 }
 
+Area::Area()
+{
+
+}
+
 Area::~Area() {
     delete id;
     delete name;

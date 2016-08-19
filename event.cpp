@@ -11,6 +11,11 @@ Event::Event(int *id, QString *name, QString *description, QString *actions, int
     this->numResults = numResults;
 }
 
+Event::Event()
+{
+
+}
+
 Event::~Event() {
     delete id;
     delete name;

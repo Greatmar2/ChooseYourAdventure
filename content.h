@@ -1,10 +1,22 @@
 #ifndef CONTENT_H
 #define CONTENT_H
 
+#define NUM_ENVIRONMENTS 10
+#define NUM_AREAS 50
+#define NUM_EVENTS 50
+#define NUM_ITEMS 50
+#define NUM_ACTIONS 10
+#define NUM_RESULTS 50
+#define NUM_REACTIONS 20
+#define NUM_RACES 5
+#define NUM_NPCS 10
+#define NUM_RESTRICTIONS 10
+
 #include <QString>
 
 class Result {
 public:
+    Result();
     Result(QString* description, int* resultCause, int* resultProbability);
     virtual ~Result();
 
@@ -20,7 +32,8 @@ private:
 
 class Event{
 public:
-    Event(int* id, QString* name, QString* description, QString* actions, int* actionIDs, int* numActions, Result* results, int* numResults);
+    Event();
+    Event(int* id, QString* name, QString* description, QString *actions, int* actionIDs, int* numActions, Result* results, int* numResults);
     virtual ~Event();
 
     int* getID() { return id; }
@@ -45,6 +58,7 @@ private:
 
 class Item {
 public:
+    Item();
     Item(int* id, QString* name, QString* description, int* mass, QString* actions, int* actionIDs, int* numActions, Result* results, int* numResults);
     virtual ~Item();
 
@@ -72,6 +86,9 @@ private:
 
 class Race {
 public:
+    Race();
+
+    virtual ~Race();
 
 private:
     int* id;
@@ -84,7 +101,8 @@ private:
 class Environment {
 
 public:
-    Environment(int* id, QString* name, QString* description, int* travelSpeed, Item* items = NULL, int* numItems = 0, Event* events = NULL, int* eventProbs = NULL, int* numEvents = 0, int* restrictions = 0, int* numRestrictions = 0);
+    Environment();
+    Environment(int* id, QString* name, QString* description, int* travelSpeed, Item* items, int* numItems, Event* events, int* eventProbs, int* numEvents, int* restrictions, int* numRestrictions);
     virtual ~Environment();
 
     int* getID() { return id; }
@@ -117,7 +135,8 @@ private:
 class Area {
 
 public:
-    Area(int* id, QString* name, QString* description, int* environment, int* travelSpeed, Item* items = NULL, int* numItems = 0, Event* events = NULL, int* eventProbs = NULL, int* numEvents = 0, int* restrictions = 0, int* numRestrictions = 0);
+    Area();
+    Area(int* id, QString* name, QString* description, int* environment, int* travelSpeed, Item* items, int* numItems, Event* events, int* eventProbs, int* numEvents, int* restrictions, int* numRestrictions);
     virtual ~Area();
 
     int* getID() { return id; }
@@ -151,7 +170,8 @@ private:
 
 class NPC {
 public:
-    NPC(int* id, QString* name, QString* description, int* attitude, int* raceID, char* gender, QString* actions, int* actionIDs, int* numActions, Event* events, int* eventProbs, int* numEvents, Result* results, int* numResults);
+    NPC();
+    NPC(int* id, QString* name, QString* description, int* attitude, int* raceID, char* gender, QString* actions, int* actionIDs, int* numActions, Event events[], int* eventProbs, int* numEvents, Result results[], int* numResults);
     virtual ~NPC();
 
     int* getID() { return id; }

@@ -1,0 +1,3 @@
+Thick Forest | Dense trees surround you, obscuring vision and blocking most of the sunlight. | 2 | 0, 1, 2, 3, 4 | 10000, 500, 500, 100, 200 | 0, 1 | 5, 30 | 0 | 0
+Thick Forest | Dense trees surround you, obscuring vision and blocking most of the sunlight. | 2 | 0, 1, 2, 3, 4 | 10000, 500, 500, 100, 200 | 0, 1 | 5, 30 | 0 | 0
+Thick Forest | Dense trees surround you, obscuring vision and blocking most of the sunlight. | 2 | 0, 1, 2, 3, 4 | 10000, 500, 500, 100, 200 | 0, 1 | 5, 30 | 0 | 0
