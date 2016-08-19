@@ -71,13 +71,20 @@ private:
 };
 
 class Race {
+public:
 
+private:
+    int* id;
+    QString* name; //The name of the race.
+    QString* description; //A description of the race as a whole.
+    int* reactions; //Integers indicating a modifier applied to NPC's attitude towards player when first encountered. Position in array corresponds to the race's ID.
+    int* numReactions;
 };
 
 class Environment {
 
 public:
-    Environment(int* id, QString* name, QString* description, int* travelSpeed, Item* items = NULL, int* numItems = 0, Event* events = NULL, int* numEvents = 0, int* restrictions = 0, int* numRestrictions = 0);
+    Environment(int* id, QString* name, QString* description, int* travelSpeed, Item* items = NULL, int* numItems = 0, Event* events = NULL, int* eventProbs = NULL, int* numEvents = 0, int* restrictions = 0, int* numRestrictions = 0);
     virtual ~Environment();
 
     int* getID() { return id; }
@@ -87,6 +94,7 @@ public:
     Item* getItems() { return items; }
     int* getNumItems() { return numItems; }
     Event* getEvents() { return events; }
+    int* getEventProbs() { return eventProbs; }
     int* getNumEvents() { return numEvents; }
     int* getRestrictions() { return restrictions; }
     int* getNumRestrictions() { return numRestrictions; }
@@ -100,6 +108,7 @@ private:
     Item* items; //Array of IDs of items that can be found in environment.
     int* numItems; //Number of items in array. Default 0.
     Event* events; //Array of IDs of events that can randomly occur in environment.
+    int* eventProbs; //Array of probabilities of events occuring each minute in area. Out of 10000. Note that individual areas may modify this. Same size as items.
     int* numEvents; //Number of events in array. Default 0.
     int* restrictions; //Array containing all the restrictions that to travel in this area. See enum posRestrictions. Default 0.
     int* numRestrictions; //Integer descibing the number of items in the restrictions array. Default 0.
@@ -108,7 +117,7 @@ private:
 class Area {
 
 public:
-    Area(int* id, QString* name, QString* description, int* environment, int* travelSpeed, Item* items = NULL, int* numItems = 0, Event* events = NULL, int* numEvents = 0, int* restrictions = 0, int* numRestrictions = 0);
+    Area(int* id, QString* name, QString* description, int* environment, int* travelSpeed, Item* items = NULL, int* numItems = 0, Event* events = NULL, int* eventProbs = NULL, int* numEvents = 0, int* restrictions = 0, int* numRestrictions = 0);
     virtual ~Area();
 
     int* getID() { return id; }
@@ -119,6 +128,7 @@ public:
     Item* getItems() { return items; }
     int* getNumItems() { return numItems; }
     Event* getEvents() { return events; }
+    int* getEventProbs() { return eventProbs; }
     int* getNumEvents() { return numEvents; }
     int* getRestrictions() { return restrictions; }
     int* getNumRestrictions() { return numRestrictions; }
@@ -133,6 +143,7 @@ private:
     Item* items;
     int* numItems;
     Event* events;
+    int* eventProbs; //Array of probabilities of events occuring each minute in area. Out of 10000. Note that individual areas may modify this. Same size as items.
     int* numEvents;
     int* restrictions;
     int* numRestrictions;
@@ -140,7 +151,7 @@ private:
 
 class NPC {
 public:
-    NPC(int* id, QString* name, QString* description, int* attitude, int* raceID, char* gender, QString* actions, int* actionIDs, int* numActions, int* events, int* eventProbs, int* numEvents, Result* results, int* numResults);
+    NPC(int* id, QString* name, QString* description, int* attitude, int* raceID, char* gender, QString* actions, int* actionIDs, int* numActions, Event* events, int* eventProbs, int* numEvents, Result* results, int* numResults);
     virtual ~NPC();
 
     int* getID() { return id; }
@@ -152,7 +163,7 @@ public:
     QString* getActions() { return actions; }
     int* getActionIDs() { return actionIDs; }
     int* getNumActions() { return numActions; }
-    int* getEvents() { return events; }
+    Event* getEvents() { return events; }
     int* getEventProbs() { return eventProbs; }
     int* getNumEvents() { return numEvents; }
     Result* getResults() { return results; }
@@ -168,7 +179,7 @@ private:
     QString* actions;
     int* actionIDs;
     int* numActions;
-    int* events;
+    Event* events;
     int* eventProbs;
     int* numEvents;
     Result* results; //Can be used for results or dialogue. In the case of dialogue, merely make the result description the dialogue that the character says.

@@ -25,6 +25,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::initGame() {
+
     ui->cmbSecond->setVisible(false);
     ui->cmbThird->setVisible(false);
     ui->cmbFourth->setVisible(false);
@@ -35,4 +36,29 @@ void MainWindow::setOutput(QString text) {
   }
 void MainWindow::setPrompt(QString text) {
     ui->lblPrompt->setText(text);
+}
+
+void MainWindow::on_lneTextInput_returnPressed()
+{
+
+}
+
+void MainWindow::on_cmbFirst_currentIndexChanged(int index)
+{
+
+}
+
+void MainWindow::on_cmbSecond_currentIndexChanged(int index)
+{
+
+}
+
+void MainWindow::on_cmbThird_currentIndexChanged(int index)
+{
+
+}
+
+void MainWindow::on_cmbFourth_currentIndexChanged(int index)
+{
+
 }

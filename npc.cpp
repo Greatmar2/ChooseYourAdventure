@@ -1,6 +1,6 @@
 #include "content.h"
 
-NPC::NPC(int *id, QString *name, QString *description, int *attitude, int *raceID, char *gender, QString *actions, int *actionIDs, int *numActions, int *events, int *eventProbs, int *numEvents, Result *results, int *numResults) {
+NPC::NPC(int *id, QString *name, QString *description, int *attitude, int *raceID, char *gender, QString *actions, int *actionIDs, int *numActions, Event *events, int *eventProbs, int *numEvents, Result *results, int *numResults) {
     this->id = id;
     this->name = name;
     this->description = description;
