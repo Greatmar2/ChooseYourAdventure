@@ -20,10 +20,18 @@ SOURCES +=\
     event.cpp \
     item.cpp \
     npc.cpp \
+    result.cpp \
+    inventory.cpp \
+    map.cpp \
+    status.cpp \
     race.cpp
 
 HEADERS  += mainwindow.h \
-    content.h
+    content.h \
+    content.h \
+    inventory.h \
+    map.h \
+    status.h
 
 FORMS    += mainwindow.ui
 

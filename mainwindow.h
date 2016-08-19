@@ -17,15 +17,9 @@ public:
     void setOutput(QString text);
     void setPrompt(QString text);
 
-private slots:
-    void on_lneInput_returnPressed();
-
-    void on_lneInput_textEdited(const QString &arg1);
-
 private:
     Ui::MainWindow *ui;
-    bool eventFilter(QObject *obj, QEvent *event);
-    void tabPressed(QString text, int cursorPos);
+    void initGame();
 };
 
 #endif // MAINWINDOW_H
